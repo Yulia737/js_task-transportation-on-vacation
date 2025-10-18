@@ -3,22 +3,23 @@
  *
  * @return {number}
  */
-function calculateRentalCost(days) {
-  const numberOfDays = days;
-  const dailyPrice = 40;
-  const discountFor7days = 50;
-  const discountFor3days = 20;
+function calculateRentalCost(numberOfDays) {
+  const DAILY_PRICE = 40;
+  const DISCOUNT_FOR_7DAYS = 50;
+  const DISCOUNT_FOR_3DAYS = 20;
+  const LONG_TERM = 7;
+  const MID_TERM = 3;
 
-  if (numberOfDays >= 7) {
-    return days * dailyPrice - discountFor7days;
+  if (numberOfDays >= LONG_TERM) {
+    return numberOfDays * DAILY_PRICE - DISCOUNT_FOR_7DAYS;
   }
 
-  if (numberOfDays < 3) {
-    return days * dailyPrice;
+  if (numberOfDays < MID_TERM) {
+    return numberOfDays * DAILY_PRICE;
   }
 
   if (numberOfDays >= 3) {
-    return days * dailyPrice - discountFor3days;
+    return numberOfDays * DAILY_PRICE - DISCOUNT_FOR_3DAYS;
   }
 }
 
